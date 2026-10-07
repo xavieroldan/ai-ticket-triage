@@ -1,0 +1,49 @@
+name: Evaluate model
+
+# Manual run: downloads the real model and reports accuracy on eval/dataset.csv
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Hugging Face model id
+        default: MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-model.txt
+
+      - name: Install CPU PyTorch and model dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements-model.txt
+
+      - name: Cache Hugging Face models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ inputs.model }}
+
+      - name: Evaluate
+        env:
+          TRIAGE_MODEL: ${{ inputs.model }}
+        run: python -m eval.evaluate | tee evaluation.txt
+
+      - name: Publish report
+        run: |
+          {
+            echo '```'
+            cat evaluation.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

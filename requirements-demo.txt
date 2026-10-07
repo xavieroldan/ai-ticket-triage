@@ -1,0 +1,2 @@
+-r requirements-model.txt
+gradio>=4.0

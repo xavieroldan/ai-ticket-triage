@@ -1,0 +1,31 @@
+text,category,urgency
+"The invoice for March was charged twice to our card",billing,medium
+"We need a refund for the cancelled subscription",billing,low
+"All customers are getting an error at checkout, payments fail",billing,high
+"La factura de octubre tiene un importe incorrecto",billing,medium
+"Necesito una copia de la factura del año pasado cuando podáis",billing,low
+"I forgot my password and the reset email never arrives",access,medium
+"Nobody in the sales team can log in since this morning",access,high
+"No puedo iniciar sesión, me dice que mi usuario está bloqueado",access,medium
+"¿Cómo doy permisos de administrador a un compañero?",access,low
+"No puc accedir al meu compte des de l'actualització",access,medium
+"The save button returns a 500 error on the orders page",bug,medium
+"The app crashes for every user when opening the dashboard",bug,high
+"El botón de exportar no hace nada en Firefox",bug,low
+"Al guardar un cliente aparece un error y se pierden los datos",bug,high
+"The date picker shows the wrong month, minor issue",bug,low
+"The website takes more than a minute to load for everyone",performance,high
+"Reports are a bit slower than usual today",performance,low
+"La aplicación va muy lenta desde la última actualización",performance,medium
+"El servicio está caído y los clientes no pueden trabajar",performance,high
+"L'aplicació triga molt a carregar les factures",performance,medium
+"It would be nice to export reports to Excel",feature_request,low
+"Could you add dark mode to the mobile app?",feature_request,low
+"Nos gustaría poder filtrar los pedidos por país",feature_request,low
+"We need SSO with Azure AD before the rollout next month",feature_request,medium
+"Seria útil poder adjuntar fitxers als tiquets",feature_request,low
+"What are your office opening hours?",other,low
+"Quiero cambiar la persona de contacto de la empresa",other,low
+"Thanks for the help yesterday, everything works now",other,low
+"¿Tenéis algún webinar de formación este mes?",other,low
+"Please update our company address in your records",other,low

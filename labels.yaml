@@ -1,0 +1,22 @@
+# Categories and urgency levels used by the zero-shot classifier.
+# Each label has a short description that is turned into a hypothesis
+# for the NLI model, so clearer descriptions give better results.
+
+categories:
+  billing: Invoices, payments, charges or refunds
+  access: Login, passwords, permissions or user accounts
+  bug: Something in the application is broken or returns an error
+  performance: The system is slow, times out or is unavailable
+  feature_request: A request for a new feature or an improvement
+  other: Anything that does not fit the other categories
+
+urgency:
+  high: Blocks work for many users or affects customers right now
+  medium: Causes problems but there is a workaround
+  low: A question, a minor issue or a request with no deadline
+
+# Below this confidence the ticket is flagged for human review.
+review_threshold: 0.5
+
+# Hypothesis template for the NLI model; {} is replaced by the label description.
+hypothesis_template: "This support ticket is about: {}."
